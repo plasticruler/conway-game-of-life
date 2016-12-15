@@ -22,7 +22,7 @@ function setup() {
     frameRate(FRAME_RATE);
     //row, column
     createGlider(5, 8);
-    //createBlinker(3, 3);
+    createBlinker(6, 13);
 }
 
 function createBlinker(row, col) {
@@ -55,7 +55,7 @@ function resetIsVisited() {
 function draw() {
     background('white');
     g.Draw();
-    if (pause) {
+    if (!pause) {
         var backupGrid = new Grid(g.ROW_COUNT, g.COL_COUNT);
 
         for (var z = 0; z < g.Cells.length; z++) {
