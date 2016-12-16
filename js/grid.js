@@ -1,13 +1,14 @@
-var Grid = function(rows, cols) {
+var Grid = function(rows, cols, cell_width) {
 
     this.Cells = [];
     this.ROW_COUNT = rows;
     this.COL_COUNT = cols;
+    this.CELL_WIDTH = cell_width;
 
     this.setup = function() {
         for (var row = 0; row < this.ROW_COUNT; row++) {
             for (var col = 0; col < this.COL_COUNT; col++) {
-                this.Cells.push(new Cell(this, row, col));
+                this.Cells.push(new Cell(this, row, col, this.CELL_WIDTH));
             }
         }
     }
@@ -31,11 +32,11 @@ var Grid = function(rows, cols) {
         return r;
     }
 
-    this.getIndex = function(col, row) {
-        if (row < 0 || col < 0 || row > ROW_COUNT - 1 || col > ROW_COUNT - 1) {
+    this.getIndex = function(row, col) {
+        if (row < 0 || col < 0 || row > this.ROW_COUNT - 1 || col > this.COL_COUNT - 1) {
             return -1;
         }
-        return row + col * ROW_COUNT;
+        return col + row * this.COL_COUNT;
     }
 
     this.getCell = function(i, j) {

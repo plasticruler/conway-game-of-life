@@ -1,7 +1,8 @@
-var Cell = function(g, row, col) {
+var Cell = function(g, row, col, cell_width) {
 
     this.Column = col;
     this.Row = row;
+    this.Cell_Width = cell_width;
     this.cellType = _NEUTRAL;
     this.IsVisited = false;
     this.IsAlive = false;
@@ -41,25 +42,25 @@ var Cell = function(g, row, col) {
         fill(this.getCellColour());
         stroke('#333399');
 
-        line(this.Column * CELL_WIDTH,
-            this.Row * CELL_WIDTH,
-            this.Column * CELL_WIDTH + CELL_WIDTH,
-            this.Row * CELL_WIDTH);
+        line(this.Column * this.Cell_Width,
+            this.Row * this.Cell_Width,
+            this.Column * this.Cell_Width + this.Cell_Width,
+            this.Row * this.Cell_Width);
 
 
-        line(this.Column * CELL_WIDTH,
-            this.Row * CELL_WIDTH + CELL_WIDTH,
-            this.Columncol * CELL_WIDTH + CELL_WIDTH,
-            this.Row * CELL_WIDTH + CELL_WIDTH);
+        line(this.Column * this.Cell_Width,
+            this.Row * this.Cell_Width + this.Cell_Width,
+            this.Columncol * this.Cell_Width + this.Cell_Width,
+            this.Row * this.Cell_Width + this.Cell_Width);
 
 
-        line(col * CELL_WIDTH + CELL_WIDTH, row * CELL_WIDTH, col * CELL_WIDTH + CELL_WIDTH, row * CELL_WIDTH + CELL_WIDTH);
+        line(col * this.Cell_Width + this.Cell_Width, row * this.Cell_Width, col * this.Cell_Width + this.Cell_Width, row * this.Cell_Width + this.Cell_Width);
 
-        line(col * CELL_WIDTH, row * CELL_WIDTH, col * CELL_WIDTH, row * CELL_WIDTH + CELL_WIDTH);
+        line(col * this.Cell_Width, row * this.Cell_Width, col * this.Cell_Width, row * this.Cell_Width + this.Cell_Width);
 
 
         noStroke();
-        rect(col * CELL_WIDTH, row * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
+        rect(col * this.Cell_Width, row * this.Cell_Width, this.Cell_Width, this.Cell_Width);
     }
 
 
