@@ -1,6 +1,3 @@
-/* configs */
-
-
 var ROW_COUNT = 20;
 var COL_COUNT = 50;
 var CELL_WIDTH = 10;
