@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/skrillex581/conway-game-of-life/master/game-of-life.gif)
+![alt tag](https://raw.githubusercontent.com/plasticruler/conway-game-of-life/master/game-of-life.gif)
 
 # Conway's Game of Life
 Conway's Game of life in p5.js
